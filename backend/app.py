@@ -24,8 +24,8 @@ class StationsStatus(Resource):
         return req.json()
 
 
-api.add_resource(Stations, '/stations')
-api.add_resource(StationsStatus, '/stationsStatus')
+api.add_resource(Stations, '/api/stations')
+api.add_resource(StationsStatus, '/api/stationsStatus')
 
 if __name__ == "__main__":
     app.run(debug=True)
