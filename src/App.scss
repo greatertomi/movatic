@@ -25,6 +25,26 @@ nav {
   -moz-box-shadow: 4px 5px 5px 0 #f1f0f0;
 }
 
+.bikesCard {
+  @extend .metricCard;
+  .text {
+    text-align: left !important;
+  }
+  div {
+    #numDiv {
+      align-items: flex-start;
+      div {
+        color: #323131 !important;
+      }
+      #description {
+        font-weight: bold;
+        color: #919193 !important;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
 .metricCard {
   box-shadow: 4px 5px 5px 0 #f1f0f0, -4px 5px 5px 0 #f1f0f0;
   -webkit-box-shadow: 4px 5px 5px 0 #f1f0f0, -4px 5px 5px 0 #f1f0f0;
@@ -45,8 +65,13 @@ nav {
       flex-direction: column;
       div {
         font-weight: bold;
-        color: #B4B4BB;
+        color: #919193;
       }
     }
   }
+}
+
+.detailHeading {
+  text-align: center;
+  font-weight: bold;
 }

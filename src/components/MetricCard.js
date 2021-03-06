@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {AiOutlineInfoCircle} from 'react-icons/ai';
 
-const MetricCard = () => {
+const MetricCard = ({description, number}) => {
   return (
-    <div className="card metricCard mt-n1">
+    <div className="card metricCard">
       <div className="card-body">
         <div id='numDiv'>
-          <h2>4</h2>
-          <div className="ml-1">Bikes</div>
+          <h2>{number}</h2>
+          <div>{description}</div>
         </div>
         <div>
           <AiOutlineInfoCircle size={40} color='#B4B4BB'/>
@@ -15,6 +16,11 @@ const MetricCard = () => {
       </div>
     </div>
   );
+};
+
+MetricCard.propTypes = {
+  description: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired
 };
 
 export default MetricCard;

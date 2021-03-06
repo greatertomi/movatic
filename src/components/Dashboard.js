@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Dashboard = () => {
   return (
@@ -6,11 +7,11 @@ const Dashboard = () => {
       <table className="table">
         <thead>
         <tr className="bg-light">
+          <th>STATION ID</th>
           <th>NAME</th>
-          <th>LOCATION</th>
-          <th>STATUS</th>
-          <th>ENTRIES</th>
-          <th>RISK PROFILE</th>
+          <th>ADDRESS</th>
+          <th>LON</th>
+          <th>IAT</th>
           <th />
         </tr>
         </thead>
@@ -21,7 +22,9 @@ const Dashboard = () => {
           <td>Location 1</td>
           <td>Entries 1</td>
           <td>Risk Profile</td>
-          <td><button className="btn btn-primary btn-sm">View Detail</button></td>
+          <td>
+            <Link className="btn btn-primary btn-sm" to="/status/gb_234">View Detail</Link>
+          </td>
         </tr>
         </tbody>
       </table>
