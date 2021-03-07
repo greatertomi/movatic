@@ -1,9 +1,18 @@
+# Pull latest official node image
 FROM node:latest
 
-RUN mkdir /frontend
+# Expose ports
+EXPOSE 3000
+EXPOSE 35729
 
-WORKDIR /frontend
+# Set working directory
+WORKDIR /app
 
-COPY package.json /frontend/package.json
+# Add /app/node_modules/.bin to environment variables
+ENV PATH /app/node_modules/.bin:$PATH
 
+# Copy package files and install app dependencies
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
 RUN npm install
+RUN npm install react-scripts -g
