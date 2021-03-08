@@ -10,6 +10,11 @@ This project is based on MDS data [here](https://github.com/openmobilityfoundati
 - React
 - Docker
 
+## Instruction
+
+- Make sure you have docker installed on your machine
+- Execute `docker-compose up` in the CMD to run the project.
+
 ## Implementation plan
 
 Having an up to date data of all bike sharing systems around the world is important and below are my thoughts on how to make that happen.
