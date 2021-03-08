@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import MetricCard from "./MetricCard";
-import BikesAvailable from "./BikesAvailable";
-import { StatusContext } from "../StatusContext";
+import MetricCard from './MetricCard';
+import BikesAvailable from './BikesAvailable';
+import { StatusContext } from '../StatusContext';
 
 const StationDetails = () => {
   const [stationStation, getStationStatus] = useContext(StatusContext);
   const { id } = useParams();
-  getStationStatus(id);
+
+  useEffect(async () => {
+    await getStationStatus(id);
+  }, []);
+
   return (
     <div>
       <h2 className="detailHeading">{id}</h2>
