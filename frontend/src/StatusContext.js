@@ -1,7 +1,7 @@
-import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
-import { BASEURL } from "./utils/constants";
-import PropTypes from "prop-types";
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
+import { BASEURL } from './utils/constants';
+import PropTypes from 'prop-types';
 
 export const StatusContext = createContext();
 
@@ -12,13 +12,16 @@ export const StatusProvider = (props) => {
   const getAllStatus = async () => {
     const res = await axios.get(`${BASEURL}/stationsStatus`);
     const { stations } = res.data.data;
+    console.log('allStations', stations);
     setAllStationsStatus(stations);
   };
 
   const getStationStatus = (station_id) => {
+    console.log('in-context', station);
     const [station] = allStationsStatus.filter(
       (e) => e.station_id === station_id
     );
+    console.log('in-context', station);
     setStationStatus(station);
   };
 
@@ -34,5 +37,5 @@ export const StatusProvider = (props) => {
 };
 
 StatusProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 };

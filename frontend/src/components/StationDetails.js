@@ -6,11 +6,14 @@ import BikesAvailable from './BikesAvailable';
 import { StatusContext } from '../StatusContext';
 
 const StationDetails = () => {
-  const [stationStation, getStationStatus] = useContext(StatusContext);
+  const [stationStatus, getStationStatus] = useContext(StatusContext);
   const { id } = useParams();
+  console.log('detail-id1', id);
 
   useEffect(async () => {
+    console.log('detail-id2', id);
     await getStationStatus(id);
+    console.log('detail-station');
   }, []);
 
   return (
@@ -20,31 +23,31 @@ const StationDetails = () => {
         <div className="col-md-3">
           <MetricCard
             description="is returning"
-            number={stationStation.is_installed}
+            number={stationStatus.is_installed}
           />
         </div>
         <div className="col-md-3">
           <MetricCard
             description="is renting"
-            number={stationStation.is_renting}
+            number={stationStatus.is_renting}
           />
         </div>
         <div className="col-md-3">
           <MetricCard
             description="is installed"
-            number={stationStation.is_returning}
+            number={stationStatus.is_returning}
           />
         </div>
         <div className="col-md-3">
           <MetricCard
             description="num docks available"
-            number={stationStation.num_bikes_available}
+            number={stationStatus.num_bikes_available}
           />
         </div>
         <div className="col-md-3">
           <MetricCard
             description="num bikes available"
-            number={stationStation.num_docks_available}
+            number={stationStatus.num_docks_available}
           />
         </div>
         <div className="col-md-3">
